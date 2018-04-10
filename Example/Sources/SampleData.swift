@@ -32,27 +32,7 @@ final class SampleData {
     private init() {}
 
     let messageTextValues = [
-        "Ok",
-        "k",
-        "lol",
-        "1-800-555-0000",
-        "One Infinite Loop Cupertino, CA 95014 This is some extra text that should not be detected.",
-        "This is an example of the date detector 11/11/2017. April 1st is April Fools Day. Next Friday is not Friday the 13th.",
-        "https://github.com/SD10",
-        "Check out this awesome UI library for Chat",
-        "My favorite things in life don’t cost any money. It’s really clear that the most precious resource we all have is time.",
-        """
-            You know, this iPhone, as a matter of fact, the engine in here is made in America.
-            And not only are the engines in here made in America, but engines are made in America and are exported.
-            The glass on this phone is made in Kentucky. And so we've been working for years on doing more and more in the United States.
-            """,
-        """
-            Remembering that I'll be dead soon is the most important tool I've ever encountered to help me make the big choices in life.
-            Because almost everything - all external expectations, all pride, all fear of embarrassment or failure -
-            these things just fall away in the face of death, leaving only what is truly important.
-            """,
-        "I think if you do something and it turns out pretty good, then you should go do something else wonderful, not dwell on it for too long. Just figure out what’s next.",
-        "Price is rarely the most important thing. A cheap product might sell some units. Somebody gets it home and they feel great when they pay the money, but then they get it home and use it and the joy is gone."
+        "I think if you do something and it turns out pretty good, then you should go do something else wonderful, not dwell on it for too long. Just figure out what’s next. Price is rarely the most important thing. A cheap product might sell some units. Somebody gets it home and they feel great when they pay the money, but then they get it home and use it and the joy is gone.END"
     ]
 
     let dan = Sender(id: "123456", displayName: "Dan Leonard")
@@ -70,9 +50,11 @@ final class SampleData {
 
     var now = Date()
 
-    let messageTypes = ["Text", "Text", "Text", "AttributedText", "Photo", "Video", "Location", "Emoji"]
+//    let messageTypes = ["Text", "Text", "Text", "AttributedText", "Photo", "Video", "Location", "Emoji"]
 
-    let attributes = ["Font1", "Font2", "Font3", "Font4", "Color", "Combo"]
+    let messageTypes = ["AttributedText"]
+//    let attributes = ["Font1", "Font2", "Font3", "Font4", "Color", "Combo"]
+    let attributes = ["Font1"]
 
     let locations: [CLLocation] = [
         CLLocation(latitude: 37.3118, longitude: -122.0312),
@@ -98,9 +80,10 @@ final class SampleData {
         let randomAttribute = Int(arc4random_uniform(UInt32(attributes.count)))
         let range = NSRange(location: 0, length: nsString.length)
 
-        switch attributes[randomAttribute] {
+        switch attributes[randomAttribute] { //here
         case "Font1":
             mutableAttributedString.addAttribute(NSAttributedStringKey.font, value: UIFont.preferredFont(forTextStyle: .body), range: range)
+//            mutableAttributedString.addAttribute(NSAttributedStringKey.font, value: UIFont(name: "Colfax-Regular", size: 14)!, range: range)
         case "Font2":
             mutableAttributedString.addAttributes([NSAttributedStringKey.font: UIFont.monospacedDigitSystemFont(ofSize: UIFont.systemFontSize, weight: UIFont.Weight.bold)], range: range)
         case "Font3":
