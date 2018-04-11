@@ -76,6 +76,8 @@ open class TextMessageCell: MessageCollectionViewCell {
                 let attributes = displayDelegate.detectorAttributes(for: detector, and: message, at: indexPath)
                 messageLabel.setAttributes(attributes, detector: detector)
             }
+            let label =  UILabel(frame: CGRect(x: 0, y: 0, width: messageContainerView.frame.size.width, height: messageContainerView.frame.size.height))
+            label.numberOfLines = 0
             switch message.data {
             case .text(let text), .emoji(let text):
                 messageLabel.text = text
@@ -83,12 +85,22 @@ open class TextMessageCell: MessageCollectionViewCell {
                     messageLabel.font = font
                 }
             case .attributedText(let text):
-                messageLabel.attributedText = text
+//                messageLabel.attributedText = text
+                label.attributedText = text
+
             default:
                 break
             }
             // Needs to be set after the attributedText because it takes precedence
             messageLabel.textColor = textColor
+            
+            
+//            label.sizeToFit()
+            
+            print ("&&&&&&&&&&&&&&&&&&&&")
+            print(label.frame.height)
+            
+            messageContainerView.addSubview(label)
         }
     }
     

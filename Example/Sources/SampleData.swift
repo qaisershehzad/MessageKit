@@ -32,7 +32,7 @@ final class SampleData {
     private init() {}
 
     let messageTextValues = [
-        "I think if you do something and it turns out pretty good, then you should go do something else wonderful, not dwell on it for too long. Just figure out what’s next. Price is rarely the most important thing. A cheap product might sell some units. Somebody gets it home and they feel great when they pay the money, but then they get it home and use it and the joy is gone.END"
+        "I think if you do something and it turns out pretty good, then you should go do something else wonderful, not dwell on it for too long. Just figure out what’s next. Price is rarely the most important thing. A cheap product might sell some units. Somebody gets it home and they feel great when they pay the money, but then they get it home and use it and the joy is gone.1 2 3 4 5 6 7 8 9 0 END"
     ]
 
     let dan = Sender(id: "123456", displayName: "Dan Leonard")
@@ -82,8 +82,8 @@ final class SampleData {
 
         switch attributes[randomAttribute] { //here
         case "Font1":
-            mutableAttributedString.addAttribute(NSAttributedStringKey.font, value: UIFont.preferredFont(forTextStyle: .body), range: range)
-//            mutableAttributedString.addAttribute(NSAttributedStringKey.font, value: UIFont(name: "Colfax-Regular", size: 14)!, range: range)
+//            mutableAttributedString.addAttribute(NSAttributedStringKey.font, value: UIFont.preferredFont(forTextStyle: .body), range: range)
+            mutableAttributedString.addAttribute(NSAttributedStringKey.font, value: UIFont(name: "Colfax-Regular", size: 14)!, range: range)
         case "Font2":
             mutableAttributedString.addAttributes([NSAttributedStringKey.font: UIFont.monospacedDigitSystemFont(ofSize: UIFont.systemFontSize, weight: UIFont.Weight.bold)], range: range)
         case "Font3":
